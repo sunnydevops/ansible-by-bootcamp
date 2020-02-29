@@ -1,0 +1,17 @@
+[local]
+localhost 
+
+[lb]
+cloudmaster2c.mylabserver.com
+
+[app]
+cloudmaster3c.mylabserver.com
+
+
+[db]
+cloudmaster4c.mylabserver.com
+
+[prod:children]
+lb
+app
+db
