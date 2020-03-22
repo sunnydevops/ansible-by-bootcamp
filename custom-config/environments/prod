@@ -12,5 +12,6 @@ cloudmaster3c.mylabserver.com
 cloudmaster4c.mylabserver.com
 
 [prod:children]
+local
 lb
 db
