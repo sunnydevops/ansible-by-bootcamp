@@ -46,7 +46,7 @@
       - name: install ntp
         apt:
           name: ntp
-          state: installed
+          state: present
       - name: start service
         service:
           name: ntp
