@@ -22,5 +22,5 @@
           state: installed
       - name: start service ntp
         service:
-          name: ntp
+          name: ntpd   #on centos we have "ntpd" service  and ubuntu we have "ntp"
           state: started
