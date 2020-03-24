@@ -20,3 +20,7 @@
         yum:
           name: ntp
           state: installed
+      - name: start service ntp
+        service:
+          name: ntp
+          state: started
