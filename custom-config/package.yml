@@ -24,3 +24,31 @@
         service:
           name: ntpd   #on centos we have "ntpd" service  and ubuntu we have "ntp"
           state: started
+
+  - name: package install on ubuntu
+    hosts: app
+    gather_facts: false
+    become: true
+    tasks:
+      - name: create admin user on ubunntu
+        user:
+          name: admin
+          state: present
+          uid: 5001
+      - name: remove user dojo if present
+        user:
+          name: dojo
+          state: absent
+      - name: install tree
+        apt:
+          name: tree
+          state: present
+      - name: install ntp
+        apt:
+          name: ntp
+          state: installed
+      - name: start service
+        service:
+          name: ntp
+          state: started
+        
